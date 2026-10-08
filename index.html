@@ -95,7 +95,6 @@
       transition: opacity 0.5s ease;
     }
 
-    /* ตะไบจุดไม้ขีดปรับโทนชมพูเข้ม/น้ำตาลหวาน */
     .matchbox-striker {
       width: 210px;
       height: 55px;
@@ -126,11 +125,10 @@
     .matchstick-item:active { cursor: grabbing; }
     .matchstick-item img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
 
-    /* เปลี่ยนปุ่มทริกเกอร์เป็นดอกทานตะวัน */
     .bouncing-heart-trigger {
       position: absolute;
       bottom: 80px;
-      left: 42%;
+      left: 50%;
       transform: translateX(-50%);
       font-size: 80px;
       cursor: pointer;
@@ -165,23 +163,6 @@
       animation: fadeIn 0.4s ease;
     }
 
-    /* ดอกทานตะวันประดับรอบหน้าเติมหัวใจ */
-    .sunflower-deco {
-      position: absolute;
-      font-size: 40px;
-      pointer-events: none;
-      animation: floatSunflower 3s infinite ease-in-out;
-    }
-    .sf-1 { top: 12%; left: 10%; animation-delay: 0s; }
-    .sf-2 { top: 15%; right: 10%; animation-delay: 0.5s; }
-    .sf-3 { bottom: 15%; left: 12%; animation-delay: 1s; }
-    .sf-4 { bottom: 18%; right: 12%; animation-delay: 1.5s; }
-
-    @keyframes floatSunflower {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(10deg); }
-    }
-
     .big-heart-container {
       position: relative;
       width: 230px;
@@ -189,30 +170,30 @@
       cursor: pointer;
     }
 
-    /* ปรับกรอบหัวใจและน้ำสีข้างในเป็นโทนชมพูหวาน */
     .big-heart-shape {
       width: 100%;
       height: 100%;
       background-color: #ffffff;
       clip-path: path('M115,190 C115,190 20,125 20,65 C20,32 42,15 72,15 C91,15 105,25 115,38 C125,25 139,15 158,15 C188,15 210,32 210,65 C210,125 115,190 115,190 Z');
       position: relative;
-      border: 3px solid #ff69b4;
-      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+      border: 3px solid #ffb6c1;
+      box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5);
     }
 
+    /* น้ำสีชมพูพาสเทล */
     .heart-water-fill {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 0%;
-      background: linear-gradient(0deg, #ff1493, #ff69b4, #ffb6c1);
+      background: linear-gradient(0deg, #ff99c8, #ffb6c1, #ffd1dc);
       transition: height 0.12s ease-out;
-      box-shadow: 0 -4px 12px rgba(255, 20, 147, 0.5);
+      box-shadow: 0 -4px 12px rgba(255, 182, 193, 0.6);
     }
 
     .fill-instruction {
-      color: #d81b60;
+      color: #e07a93;
       font-size: 16px;
       margin-top: 25px;
       font-weight: 500;
@@ -225,7 +206,6 @@
       50% { opacity: 1; transform: scale(1.03); }
     }
 
-    /* ใช้ไฟล์ พื้นหลัง.jpg */
     .polaroid-overlay {
       position: absolute;
       top: 0;
@@ -246,12 +226,11 @@
 
     .polaroid-container { position: relative; width: 100%; height: 100%; }
 
-    /* การ์ดโพลารอยด์ขอบสีขาวละมุน พร้อมติดไอคอนดอกทานตะวันเล็กๆ ที่มุม */
     .polaroid {
       position: absolute;
       width: 115px;
       background: #ffffff;
-      padding: 4px 4px 14px 4px;
+      padding: 4px 4px 16px 4px;
       box-shadow: 0 6px 16px rgba(255, 105, 180, 0.25), 0 2px 6px rgba(0, 0, 0, 0.1);
       border-radius: 6px;
       border: 1px solid #ffe4e1;
@@ -266,13 +245,14 @@
       will-change: transform, opacity, top, left;
     }
 
+    /* ย้ายไอคอนทานตะวันลงชิดขอบล่างสุด เล็กพอดีไม่บังข้อความ */
     .polaroid::after {
       content: '🌻';
       position: absolute;
-      bottom: 2px;
-      right: 4px;
-      font-size: 10px;
-      opacity: 0.8;
+      bottom: 1px;
+      right: 3px;
+      font-size: 8px;
+      opacity: 0.85;
     }
 
     .polaroid img {
@@ -295,6 +275,7 @@
       margin-top: 0;
       font-weight: 500;
       line-height: 1.3;
+      white-space: pre-line;
       transition: opacity 0.3s ease 0.1s, margin-top 0.3s ease, max-height 0.3s ease;
     }
 
@@ -406,13 +387,12 @@
       transform: scale(1);
     }
 
-    /* ปุ่มย้อนกลับโทนสีชมพูหวาน */
     .back-to-message-btn {
       position: absolute;
       bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      background: linear-gradient(135deg, #ff99c8, #ffb6c1);
       color: #ffffff;
       border: none;
       padding: 10px 24px;
@@ -421,23 +401,22 @@
       font-weight: 500;
       cursor: pointer;
       z-index: 400;
-      box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.6);
       transition: transform 0.2s, background-color 0.2s;
     }
 
     .back-to-message-btn:active {
       transform: translateX(-50%) scale(0.95);
-      background: #d81b60;
+      background: #e07a93;
     }
 
-    /* เอฟเฟกต์หัวใจและดอกทานตะวันลอยขึ้น */
     .floating-heart {
       position: absolute;
       pointer-events: none;
       z-index: 350;
       font-size: 26px;
       animation: floatUp 2.2s ease-out forwards;
-      filter: drop-shadow(0 2px 6px rgba(255, 105, 180, 0.5));
+      filter: drop-shadow(0 2px 6px rgba(255, 182, 193, 0.6));
     }
 
     @keyframes floatUp {
@@ -475,27 +454,20 @@
       <img id="matchImg" src="ไม้ขีด.png" alt="ไม้ขีด">
     </div>
 
-    <!-- เปลี่ยนปุ่มเป็นดอกทานตะวัน 🌻 -->
-    <div class="bouncing-heart-trigger" id="heartTrigger">🌻</div>
+    <div class="bouncing-heart-trigger" id="heartTrigger">🩷</div>
 
     <div class="big-heart-modal" id="heartModal">
-      <!-- ดอกทานตะวันประดับตกแต่ง -->
-      <div class="sunflower-deco sf-1">🌻</div>
-      <div class="sunflower-deco sf-2">🌻</div>
-      <div class="sunflower-deco sf-3">🌻</div>
-      <div class="sunflower-deco sf-4">🌻</div>
-
       <div class="big-heart-container" id="bigHeartContainer">
         <div class="big-heart-shape">
           <div class="heart-water-fill" id="waterFill"></div>
         </div>
       </div>
-      <p class="fill-instruction">แตะหรือกดค้างเพื่อเติมความรัก ✨🌻</p>
+      <p class="fill-instruction">แตะหรือกดค้างเพื่อเติมความรัก ✨🩷</p>
     </div>
 
     <div class="polaroid-overlay" id="polaroidOverlay">
       <div class="polaroid-container" id="polaroidContainer"></div>
-      <button class="back-to-message-btn" id="backBtn">ย้อนกลับ💗</button>
+      <button class="back-to-message-btn" id="backBtn">ย้อนกลับ 💗</button>
     </div>
   </div>
 
@@ -597,7 +569,7 @@
           vx: (Math.random() - 0.5) * spread,
           vy: (Math.random() - 0.5) * spread - 1.2,
           size: Math.random() * 3 + 1,
-          color: `hsl(${Math.random() * 40 + 330}, 100%, 65%)`, // ประกายไฟสีชมพูอมส้ม
+          color: `hsl(${Math.random() * 30 + 330}, 100%, 75%)`,
           alpha: 1,
           life: Math.random() * 18 + 10
         });
@@ -757,9 +729,9 @@
           fxCtx.stroke();
 
           drawSmoothPath(fxCtx, cx, cy, burnRadius);
-          fxCtx.strokeStyle = 'rgba(255, 105, 180, 0.9)';
+          fxCtx.strokeStyle = 'rgba(255, 182, 193, 0.9)';
           fxCtx.lineWidth = 5;
-          fxCtx.shadowColor = '#ff1493';
+          fxCtx.shadowColor = '#ffb6c1';
           fxCtx.shadowBlur = 12;
           fxCtx.stroke();
           fxCtx.restore();
@@ -837,7 +809,6 @@
     }, { passive: false });
     window.addEventListener('touchend', stopWatering);
 
-    // อิโมจิลอยฟ้าเป็นหัวใจและดอกทานตะวันผสมกัน 🌻💗
     const romanticIcons = ['🌻', '✨', '💗'];
 
     function createFloatingHearts(count = 1, customX = null, customY = null) {
@@ -868,13 +839,13 @@
       }, 120);
     }
 
-    /* ข้อมูลรูปภาพ 5 รูป ข้อความใหม่ทั้งหมด */
+    /* ปรับตำแหน่งตำแหน่ง top/left ให้กระจายสมดุลกึ่งกลางจอ ไม่เอียงซ้าย และเปลี่ยน photo3.png -> photo3.jpg */
     const polaroidData = [
-      { img: 'photo1.jpg', text: 'อยู่พากันนอ้วนน\nตลอดปายยเยยยนะะะะ', top: '8%', left: '6%', rotate: '-9deg', duration: '1.8s', delay: '0s' },
-      { img: 'photo2.jpg', text: 'หมู๊อยากกินนไอติมม\nถ้วยเบอเร่อออ', top: '10%', left: '56%', rotate: '8deg', duration: '2.4s', delay: '0.4s' },
-      { img: 'photo5.jpg', text: 'กินนหมูกะทะะก่อนไอติม\nคู่เราเริ่ดดจริงงๆๆ', top: '38%', left: '30%', rotate: '-3deg', duration: '1.6s', delay: '0.2s' },
-      { img: 'photo3.png', text: 'น่าารักกจังง\nอ้วนนซบไหล่เค้า\nเอ็นดูมากกก', top: '60%', left: '8%', rotate: '7deg', duration: '2.2s', delay: '0.6s' },
-      { img: 'photo4.jpg', text: 'เวลาอ้วนกลับบ้านน\nเค้าคิดเถิงงตลอด\nอยากเจออ้วนนเร็วๆแล้ววว', top: '62%', left: '54%', rotate: '-6deg', duration: '2.0s', delay: '0.3s' }
+      { img: 'photo1.jpg', text: 'อยู่พากันนอ้วนน<br>ตลอดปายยเยยยนะะะะ', top: '10%', left: '12%', rotate: '-8deg', duration: '1.8s', delay: '0s' },
+      { img: 'photo2.jpg', text: 'หมู๊อยากกินนไอติมม<br>ถ้วยเบอเร่อออ', top: '12%', left: '55%', rotate: '7deg', duration: '2.4s', delay: '0.4s' },
+      { img: 'photo5.jpg', text: 'กินนหมูกะทะะก่อนไอติม<br>คู่เราเริ่ดดจริงงๆๆ', top: '36%', left: '34%', rotate: '-3deg', duration: '1.6s', delay: '0.2s' },
+      { img: 'photo3.jpg', text: 'น่าารักกจังง\nอ้วนนซบไหล่เค้า<br>เอ็นดูมากกก', top: '60%', left: '12%', rotate: '6deg', duration: '2.2s', delay: '0.6s' },
+      { img: 'photo4.jpg', text: 'เวลาอ้วนกลับบ้านน<br>เค้าคิดเถิงงตลอด<br>อยากเจออ้วนนเร็วๆแล้ววว', top: '62%', left: '55%', rotate: '-6deg', duration: '2.0s', delay: '0.3s' }
     ];
 
     function showPolaroidsSimultaneously() {
