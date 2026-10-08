@@ -125,12 +125,13 @@
     .matchstick-item:active { cursor: grabbing; }
     .matchstick-item img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
 
+    /* ขยับตำแหน่ง bottom ลงต่ำเพื่อไม่ให้บังข้อความ */
     .bouncing-heart-trigger {
       position: absolute;
-      bottom: 80px;
+      bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 80px;
+      font-size: 70px;
       cursor: pointer;
       z-index: 150;
       display: none;
@@ -145,7 +146,7 @@
 
     @keyframes heartBounce {
       0%, 100% { transform: translateX(-50%) scale(1) rotate(0deg); }
-      50% { transform: translateX(-50%) scale(1.25) rotate(-8deg); }
+      50% { transform: translateX(-50%) scale(1.2) rotate(-8deg); }
     }
 
     .big-heart-modal {
@@ -839,12 +840,12 @@
       }, 120);
     }
 
-    /* ปรับตำแหน่งตำแหน่ง top/left ให้กระจายสมดุลกึ่งกลางจอ ไม่เอียงซ้าย และเปลี่ยน photo3.png -> photo3.jpg */
+    /* ใช้แท็ก <br> สำหรับขึ้นบรรทัดใหม่ */
     const polaroidData = [
       { img: 'photo1.jpg', text: 'อยู่พากันนอ้วนน<br>ตลอดปายยเยยยนะะะะ', top: '10%', left: '12%', rotate: '-8deg', duration: '1.8s', delay: '0s' },
       { img: 'photo2.jpg', text: 'หมู๊อยากกินนไอติมม<br>ถ้วยเบอเร่อออ', top: '12%', left: '55%', rotate: '7deg', duration: '2.4s', delay: '0.4s' },
       { img: 'photo5.jpg', text: 'กินนหมูกะทะะก่อนไอติม<br>คู่เราเริ่ดดจริงงๆๆ', top: '36%', left: '34%', rotate: '-3deg', duration: '1.6s', delay: '0.2s' },
-      { img: 'photo3.jpg', text: 'น่าารักกจังง\nอ้วนนซบไหล่เค้า<br>เอ็นดูมากกก', top: '60%', left: '12%', rotate: '6deg', duration: '2.2s', delay: '0.6s' },
+      { img: 'photo3.jpg', text: 'น่าารักกจังง<br>อ้วนนซบไหล่เค้า<br>เอ็นดูมากกก', top: '60%', left: '12%', rotate: '6deg', duration: '2.2s', delay: '0.6s' },
       { img: 'photo4.jpg', text: 'เวลาอ้วนกลับบ้านน<br>เค้าคิดเถิงงตลอด<br>อยากเจออ้วนนเร็วๆแล้ววว', top: '62%', left: '55%', rotate: '-6deg', duration: '2.0s', delay: '0.3s' }
     ];
 
